@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Domyślna strona błędu</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td>Message</td>
+    <td th:text="${message}"/>
+  </tr>
+</table>
+<a th:href="@{/}">wroc</a>
+</body>
+
+</html>

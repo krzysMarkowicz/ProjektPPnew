@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista leków</title>
+</head>
+<body>
+<center>
+  <h1>Lista leków</h1>
+  <br>
+  <div>
+    <table class="table table-bordered table-striped">
+
+      <thead>
+      <tr>
+        <th>Nazwa</th>
+        <th>Producent</th>
+        <th>Cena</th>
+        <th>Na receptę</th>
+        <th>Kategoria</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="Medicines: ${medicines}">
+
+        <td th:text="${Medicines.name}" />
+        <td th:text="${Medicines.manufacturer}" />
+        <td th:text="${Medicines.price}" />
+        <td th:text="${Medicines.onPrescription}" />
+        <td th:text="${Medicines.category.name}" />
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <a class="btn" href="http://localhost:8080/">Wróć</a>
+</center>
+</body>
+</html>

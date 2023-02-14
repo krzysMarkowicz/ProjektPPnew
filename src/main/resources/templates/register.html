@@ -1,0 +1,39 @@
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+<body>
+<div th:if="${param.errorCaptcha}">
+    Invalid username and password.
+</div>
+[[${ex}]]
+<form th:action="@{registeradd}" th:object="${registeradd}" method="post">
+    <div>
+        <input type="text" name="username" th:field="*{username}" placeholder="Username"/>
+    </div>
+    <div>
+        <input type="email" name="email" th:field="*{email}" placeholder="Email"/>
+    </div>
+    <div>
+        <input type="password" name="password" th:field="*{password}" placeholder="Password"/>
+    </div>
+    <div>
+        <input type="password" name="repassword" placeholder="Repeat Password"/>
+    </div>
+    <div>
+        <input type="checkbox" name="rules" placeholder="Rules"/>
+        <label>Akceptuje warunki umowy</label>
+    </div>
+    <p th:if="#{fields.hasErrors('username')}" th:each="err : ${#fields.errors('username')}" th:text="${err}"></p>
+    <p th:if="#{fields.hasErrors('email')}" th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+    <p th:if="#{fields.hasErrors('password')}" th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>
+    <input type="submit" value="Register"/>
+</form>
+
+
+</body>
+</html>

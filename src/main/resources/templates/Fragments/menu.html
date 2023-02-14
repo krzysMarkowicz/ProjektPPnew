@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+  <meta charset="UTF-8" />
+  <link th:href="@{/main.css}" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="menu">
+  <nav>
+      <div>
+
+          <li>
+            <a th:href="@{../listacategory}">Lista kategorii</a>
+          </li>
+          <li sec:authorize="hasRole('ADMIN')">
+            <a th:href="@{/dodaniekategori}">Dodaj kategorie</span></a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a th:href="@{../login}">Login</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</div>
+</body>
+</html>

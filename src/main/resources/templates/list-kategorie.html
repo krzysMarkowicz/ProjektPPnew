@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="https://www.thymeleaf.org">
+<style> td, th { border: 1px solid black; } </style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista kategori</title>
+</head>
+
+<body>
+<center>
+  <h1>Lista kategori</h1>
+  <br>
+  <div>
+    <table class="table table-bordered table-striped">
+
+      <thead>
+      <tr>
+        <th>Nazwa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="Category: ${categories}">
+
+        <td th:text="${Category.name}" />
+        <td><a th:href="@{/akceptujM/{id}(id=${Category.id})}">Oglądaj</a></td>
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <a class="btn" href="http://localhost:8080/">Wróć</a>
+</center>
+</body>
+
+</html>
